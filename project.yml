@@ -1,0 +1,232 @@
+name: {{ cookiecutter.name }}
+options:
+  bundleIdPrefix: {{ cookiecutter.bundle_identifier }}
+  generateEmptyDirectories: true
+configs:
+  Debug Development: debug
+  Debug Production: debug
+  Debug Staging: debug
+  AdHoc Development: release
+  AdHoc Production: release
+  AdHoc Staging: release
+  AppStore: release
+  Analyze: debug
+settingGroups:
+  basePreset:
+    CODE_SIGN_STYLE: Manual
+    SWIFT_VERSION: 5.0
+    ALWAYS_SEARCH_USER_PATHS: NO
+    CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+    CLANG_ANALYZER_NONNULL: YES
+    CLANG_CXX_LANGUAGE_STANDARD: "gnu++0x"
+    CLANG_CXX_LIBRARY: "libc++"
+    CLANG_ENABLE_MODULES: YES
+    CLANG_ENABLE_OBJC_ARC: YES
+    CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING: YES
+    CLANG_WARN_BOOL_CONVERSION: YES
+    CLANG_WARN_COMMA: YES
+    CLANG_WARN_CONSTANT_CONVERSION: YES
+    CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS: YES
+    CLANG_WARN_DIRECT_OBJC_ISA_USAGE: YES_ERROR
+    CLANG_WARN_DOCUMENTATION_COMMENTS: YES
+    CLANG_WARN_EMPTY_BODY: YES
+    CLANG_WARN_ENUM_CONVERSION: YES
+    CLANG_WARN_INFINITE_RECURSION: YES
+    CLANG_WARN_INT_CONVERSION: YES
+    CLANG_WARN_NON_LITERAL_NULL_CONVERSION: YES
+    CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF: YES
+    CLANG_WARN_OBJC_LITERAL_CONVERSION: YES
+    CLANG_WARN_OBJC_ROOT_CLASS: YES_ERROR
+    CLANG_WARN_RANGE_LOOP_ANALYSIS: YES
+    CLANG_WARN_STRICT_PROTOTYPES: YES
+    CLANG_WARN_SUSPICIOUS_MOVE: YES
+    CLANG_WARN_UNREACHABLE_CODE: YES
+    CLANG_WARN__DUPLICATE_METHOD_MATCH: YES
+    "CODE_SIGN_IDENTITY[sdk=iphoneos*]": "iPhone Developer"
+    COPY_PHASE_STRIP: NO
+    ENABLE_STRICT_OBJC_MSGSEND: YES
+    GCC_C_LANGUAGE_STANDARD: gnu99
+    GCC_NO_COMMON_BLOCKS: YES
+    GCC_WARN_64_TO_32_BIT_CONVERSION: YES
+    GCC_WARN_ABOUT_RETURN_TYPE: YES_ERROR
+    GCC_WARN_UNDECLARED_SELECTOR: YES
+    GCC_WARN_UNINITIALIZED_AUTOS: YES_AGGRESSIVE
+    GCC_WARN_UNUSED_FUNCTION: YES
+    GCC_WARN_UNUSED_VARIABLE: YES
+    IPHONEOS_DEPLOYMENT_TARGET: 11.0
+    SDKROOT: iphoneos
+    TARGETED_DEVICE_FAMILY: "1,2"
+  debugSettingPreset:
+      DEBUG_INFORMATION_FORMAT: dwarf
+      ENABLE_TESTABILITY: YES
+      GCC_DYNAMIC_NO_PIC: NO
+      GCC_OPTIMIZATION_LEVEL: 0
+      GCC_PREPROCESSOR_DEFINITIONS: ("DEBUG=1", "$(inherited)",)
+      MTL_ENABLE_DEBUG_INFO: YES
+      ONLY_ACTIVE_ARCH: YES
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+  adHocProdPreset:
+      DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
+      ENABLE_NS_ASSERTIONS: NO
+      GCC_PREPROCESSOR_DEFINITIONS: "APPSTORE=1"
+      MTL_ENABLE_DEBUG_INFO: NO
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: APPSTORE
+      SWIFT_OPTIMIZATION_LEVEL: "-Owholemodule"
+      VALIDATE_PRODUCT: YES
+  adHocDevelopmentPreset:
+      DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
+      ENABLE_NS_ASSERTIONS: NO
+      ENABLE_TESTABILITY: YES
+      GCC_PREPROCESSOR_DEFINITIONS: "ADHOC=1"
+      MTL_ENABLE_DEBUG_INFO: NO
+      ONLY_ACTIVE_ARCH: YES
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: ADHOC
+      SWIFT_OPTIMIZATION_LEVEL: "-Owholemodule"
+      VALIDATE_PRODUCT: YES
+  analyzePreset:
+      DEBUG_INFORMATION_FORMAT: dwarf
+      ENABLE_TESTABILITY: YES
+      GCC_DYNAMIC_NO_PIC: NO
+      GCC_OPTIMIZATION_LEVEL: 0
+      GCC_PREPROCESSOR_DEFINITIONS: "ANALYZE=1"
+      MTL_ENABLE_DEBUG_INFO: YES
+      ONLY_ACTIVE_ARCH: YES
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: ANALYZE
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+  appStorePreset:
+      DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
+      ENABLE_NS_ASSERTIONS: NO
+      MTL_ENABLE_DEBUG_INFO: NO
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: APPSTORE
+      SWIFT_OPTIMIZATION_LEVEL: "-Owholemodule"
+      VALIDATE_PRODUCT: YES
+settings:
+  configs:
+    Debug Development: debugSettingPreset
+    Debug Production: debugSettingPreset
+    Debug Staging: debugSettingPreset
+    Analyze: analyzePreset
+    AdHoc Development: adHocDevelopmentPreset
+    AdHoc Production: adHocProdPreset
+    AdHoc Staging: adHocProdPreset
+    AppStore: appStorePreset
+  groups:
+    - basePreset
+schemes:
+  # Debug schemes
+  {{ cookiecutter.name }} Debug Production:
+    build:
+      targets:
+        {{ cookiecutter.name }}: [analyze, test, run, profile]
+    run:
+      config: Debug Production
+    test:
+      config: Debug Production
+    profile:
+      config: Debug Production
+    analyze:
+      config: Analyze
+    archive:
+      config: Debug Production
+  {{ cookiecutter.name }} Debug Development:
+    build:
+      targets:
+        {{ cookiecutter.name }}: [analyze, test, run, profile]
+    run:
+      config: Debug Development
+    test:
+      config: Debug Development
+    profile:
+      config: Debug Development
+    analyze:
+      config: Analyze
+    archive:
+      config: Debug Development
+  {{ cookiecutter.name }} Debug Staging:
+    build:
+      targets:
+        {{ cookiecutter.name }}: [analyze, test, run, profile]
+    run:
+      config: Debug Staging
+    test:
+      config: Debug Staging
+    profile:
+      config: Debug Staging
+    analyze:
+      config: Analyze
+    archive:
+      config: Debug Staging
+    preActions:
+      script: ./Scripts/swiftlint_script.sh
+      name: SwiftLint
+  # AdHoc schemes
+  {{ cookiecutter.name }} AdHoc Production:
+    build:
+      targets:
+        {{ cookiecutter.name }}: all
+    run:
+      config: AdHoc Production
+    test:
+      config: AdHoc Production
+    profile:
+      config: AdHoc Production
+    analyze:
+      config: Analyze
+    archive:
+      config: AdHoc Production
+  {{ cookiecutter.name }} AdHoc Development:
+    build:
+      targets:
+        {{ cookiecutter.name }}: all
+    run:
+      config: AdHoc Development
+    test:
+      config: AdHoc Development
+    profile:
+      config: AdHoc Development
+    analyze:
+      config: Analyze
+    archive:
+      config: AdHoc Development
+  {{ cookiecutter.name }} AdHoc Staging:
+    build:
+      targets:
+        {{ cookiecutter.name }}: all
+    run:
+      config: AdHoc Staging
+    test:
+      config: AdHoc Staging
+    profile:
+      config: AdHoc Staging
+    analyze:
+      config: Analyze
+    archive:
+      config: AdHoc Staging
+  {{ cookiecutter.name }} AppStore:
+    build:
+      targets:
+        {{ cookiecutter.name }}: all
+    run:
+      config: AppStore
+    test:
+      config: AppStore
+    profile:
+      config: AppStore
+    analyze:
+      config: Analyze
+    archive:
+      config: AppStore
+targets:
+  {{ cookiecutter.name }}:
+    type: application
+    platform: iOS
+    deploymentTarget: "11.0"
+    postCompileScripts:
+      - path: Scripts/swiftlint_script.sh
+        name: Swiftlint
+    postCompileScripts:
+      - path: Scripts/licenseplist_script.sh
+        name: LicensePlist
+    sources:
+      - path: {{ cookiecutter.name }}
