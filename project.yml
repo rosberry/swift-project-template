@@ -229,4 +229,6 @@ targets:
       - path: Scripts/licenseplist_script.sh
         name: LicensePlist
     sources:
+      - path: Classes
+      - path: Resources
       - path: {{ cookiecutter.name }}
