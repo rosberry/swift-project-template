@@ -232,6 +232,39 @@ targets:
       - path: Classes
       - path: Resources
       - path: {{ cookiecutter.name }}
+    info:
+      path: {{ cookiecutter.name }}/Info.plist
+      properties:
+        {% if cookiecutter.fabric == "Yes" %}
+        Fabric:
+          APIKey: Add APIKey
+          Kits:
+            - KitInfo:
+            - KitName: Crashlytics
+        {% endif %}
+        CFBundleDevelopmentRegion: en
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleInfoDictionaryVersion: 6.0
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundlePackageType: APPL
+        CFBundleShortVersionString: 1.0
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+          - CFBundleURLSchemes:
+            - {{ cookiecutter.url_schemes_bundle }}
+        LSRequiresIPhoneOS: true
+        UILaunchStoryboardName: LaunchScreen
+        UIRequiredDeviceCapabilities:
+          - armv7
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
     dependancies:
       {% if cookiecutter.fabric == "Yes" %}
       carthage: Fabric
