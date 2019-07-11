@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "060F08431E4D6B3900D9166F"
+               BlueprintIdentifier = "056D8DB973D2FBD6AFFE6D17"
                BuildableName = "{{ cookiecutter.name }}.app"
                BlueprintName = "{{ cookiecutter.name }}"
                ReferencedContainer = "container:{{ cookiecutter.name }}.xcodeproj">
@@ -32,14 +32,18 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "060F08431E4D6B3900D9166F"
+            BlueprintIdentifier = "056D8DB973D2FBD6AFFE6D17"
             BuildableName = "{{ cookiecutter.name }}.app"
             BlueprintName = "{{ cookiecutter.name }}"
             ReferencedContainer = "container:{{ cookiecutter.name }}.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
+      <CodeCoverageTargets>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "AdHoc Development"
@@ -55,12 +59,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "060F08431E4D6B3900D9166F"
+            BlueprintIdentifier = "056D8DB973D2FBD6AFFE6D17"
             BuildableName = "{{ cookiecutter.name }}.app"
             BlueprintName = "{{ cookiecutter.name }}"
             ReferencedContainer = "container:{{ cookiecutter.name }}.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -74,12 +80,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "060F08431E4D6B3900D9166F"
+            BlueprintIdentifier = "056D8DB973D2FBD6AFFE6D17"
             BuildableName = "{{ cookiecutter.name }}.app"
             BlueprintName = "{{ cookiecutter.name }}"
             ReferencedContainer = "container:{{ cookiecutter.name }}.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Analyze">
