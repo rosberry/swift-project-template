@@ -17,6 +17,8 @@ final class AppConfigurator {
         let appVersion = "\(shortVersionString) (\(bundleVersion))"
         UserDefaults.standard.appVersion = appVersion{% if cookiecutter.fabric == "Yes" %}
         Fabric.with([Crashlytics.self]){% endif %}
+
+        //some logic
     }
 }
 
