@@ -19,7 +19,7 @@ final class AppConfigurator {
         Fabric.with([Crashlytics.self]){% endif %}
 
         {% if cookiecutter.swiftgen == "No" %}
-        print("some logic from swiftgen here rest")
+        print("some logic from swiftgen here restdsds")
         {% endif %}
     }
 }
