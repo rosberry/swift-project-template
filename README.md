@@ -6,17 +6,17 @@
 ![swift-project-template](.github/example.png)
 
 ## Features:
-* Xcode 10.2 and Swift 5.0 support
-* AppCode support (checked in 2018.2.2 version)
+* Xcode 11 and Swift 5.0 support
+* AppCode support
 * Custom project structure (the same in the project and on the disk)
 * Configurations and schemes:
 
 ![swift-project-template](.github/schemes.png)
 
 * Custom scripts for [Carthage](https://github.com/Carthage/Carthage) and [SwiftLint](https://github.com/realm/SwiftLint)
-* iOS Deployment Target - 11.0
+* iOS Deployment Target - 12.0
 * Optional integrations:
-  * [Fabric](https://www.fabric.io). Don't forget to add API Key and Build Secret manually from [Settings](https://www.fabric.io/settings/organizations)
+  * [Firebase](https://firebase.google.com). Don't forget to add Google-Services.plist and related frameworks manually.
   * [SwiftGen](https://github.com/SwiftGen/SwiftGen)
   * [LicensePlist](https://github.com/mono0926/LicensePlist)
 * Template for Github pull requests
@@ -26,21 +26,14 @@
 * `.gitattributes` for correct repo language detection via [linguist](https://github.com/github/linguist)
 
 ## Usage
-1. Install [Cookiecutter](https://github.com/audreyr/cookiecutter) and [Carthage](https://github.com/Carthage/Carthage):
+1. Install [Cookiecutter](https://github.com/audreyr/cookiecutter):
   
-   `brew install cookiecutter carthage`
-   
-   Carthage is used as dependency manager by default.
-2. (Optional) Install [SwiftGen](https://github.com/swiftgen/swiftgen):
-
-   `brew install swiftgen`
-
-3. Install [git-flow](https://github.com/nvie/gitflow/wiki/Mac-OS-X)
+   `brew install cookiecutter`
 4. Run `cookiecutter gh:artemnovichkov/swift-project-template`. No need to create project folder manually, cookiecutter does it for you.
 
 For future runs you can shorten the command to `cookiecutter swift-project-template`. However, if you want to use the most recent template you should still run the full command above. Or just create an alias:
 ```bash
-alias template='cookiecutter gh:artemnovichkov/swift-project-template'
+alias template="cookiecutter gh:artemnovichkov/swift-project-template"
 ```
 
 ## Author
