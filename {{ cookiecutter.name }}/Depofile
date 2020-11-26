@@ -1,0 +1,20 @@
+pods: []
+swiftPackages:
+- name: GenericModule
+  url: https://github.com/rosberry/GenericModule
+  version:
+    operation: branch
+    value: swift-package
+carts:
+{% if cookiecutter.firebase == "Yes" %}- kind: binary
+  identifier: https://building42.github.io/Specs/Carthage/iOS/Fabric.json
+- kind: binary
+  identifier: https://building42.github.io/Specs/Carthage/iOS/Crashlytics.json
+- kind: binary
+  identifier: https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json
+{% endif %}  
+- kind: github
+  identifier: rosberry/layout
+  version:
+    operation: gitReference
+    value: carthage

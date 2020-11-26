@@ -235,13 +235,6 @@ targets:
     info:
       path: {{ cookiecutter.name }}/Info.plist
       properties:
-        {% if cookiecutter.fabric == "Yes" %}
-        Fabric:
-          APIKey: Add APIKey
-          Kits:
-            - KitInfo:
-            - KitName: Crashlytics
-        {% endif %}
         CFBundleDevelopmentRegion: en
         CFBundleExecutable: $(EXECUTABLE_NAME)
         CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
@@ -252,8 +245,6 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleURLTypes:
           - CFBundleTypeRole: Editor
-          - CFBundleURLSchemes:
-            - {{ cookiecutter.url_schemes_bundle }}
         LSRequiresIPhoneOS: true
         UILaunchStoryboardName: LaunchScreen
         UIRequiredDeviceCapabilities:
@@ -266,9 +257,6 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
     dependancies:
-      {% if cookiecutter.fabric == "Yes" %}
-      carthage: Fabric
-      {% endif %}
       {% if cookiecutter.swiftgen == "Yes" %}
       carthage: Swiftgen
       {% endif %}
