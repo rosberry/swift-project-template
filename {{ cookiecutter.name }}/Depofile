@@ -1,10 +1,16 @@
 pods: []
 swiftPackages:
-- name: GenericModule
-  url: https://github.com/rosberry/GenericModule
-  version:
-    operation: branch
-    value: swift-package
+  - name: GenericModule
+    url: https://github.com/rosberry/GenericModule
+    version:
+      operation: branch
+      value: swift-package
+  - name: Core-iOS
+    url: https://github.com/rosberry/Core-iOS
+    version:
+      operation: branch
+      value: base-package
+    
 carts:
 {% if cookiecutter.firebase == "Yes" %}- kind: binary
   identifier: https://building42.github.io/Specs/Carthage/iOS/Fabric.json
