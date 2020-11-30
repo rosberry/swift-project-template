@@ -9,15 +9,10 @@ typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    lazy var appCoordinator: AppCoordinator = .init()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptions?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainModule().viewController
-        window?.makeKeyAndVisible()
-
-        AppConfigurator.configure()
-
+        appCoordinator.start(launchOptions: launchOptions)
         return true
     }
 }
