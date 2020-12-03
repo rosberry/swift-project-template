@@ -15,6 +15,7 @@
 		C3D08F4F2101B9B600FDC15E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D08F4D2101B9B500FDC15E /* Assets.swift */; };{% endif %}
 		06DAD03A1F4E95B700FD62BD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 06DAD0391F4E95B700FD62BD /* Settings.bundle */; };
 		06E0EBD11FAC0BB4002715AE /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0EBD01FAC0BB4002715AE /* AppConfigurator.swift */; };
+		3689F90F2578E8D300081F5D /* FingertipsDebooggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689F90E2578E8D300081F5D /* FingertipsPlugin.swift */; };
 		36024290257104A4009645F1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602428F257104A4009645F1 /* AppCoordinator.swift */; };{% if cookiecutter.firebase == "Yes" %}
 		06A255DA2020B0BC00C33704 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A255D82020B0BC00C33704 /* Fabric.framework */; };
 		06A255DB2020B0BC00C33704 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A255D92020B0BC00C33704 /* Crashlytics.framework */; };{% endif %}
@@ -32,6 +33,7 @@
 		06A255D92020B0BC00C33704 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Carthage/Build/iOS/Crashlytics.framework; sourceTree = "<group>"; };{% endif %}
 		06DAD0391F4E95B700FD62BD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		06E0EBD01FAC0BB4002715AE /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
+		3689F90E2578E8D300081F5D /* FingertipsDebooggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingertipsDebooggerPlugin.swift; sourceTree = "<group>"; };
 		3602428F257104A4009645F1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		06E0EBD21FAC0D4B002715AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		06E0EBD41FAC0D97002715AE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -149,6 +151,7 @@
 		060F089C1E4D79C000D9166F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				 3689F90D2578E8C200081F5D /* DebooggerPlugins */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -159,6 +162,14 @@
 				3602428F257104A4009645F1 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3689F90D2578E8C200081F5D /* DebooggerPlugins */ = {
+			isa = PBXGroup;
+			children = (
+				3689F90E2578E8D300081F5D /* FingertipsDebooggerPlugin.swift */,
+			);
+			path = DebooggerPlugins;
 			sourceTree = "<group>";
 		};{% if cookiecutter.firebase == "Yes" %}
 		06A610D91FAC373B009A918A /* Frameworks */ = {
@@ -334,6 +345,7 @@
 				060F086D1E4D6C9200D9166F /* AppDelegate.swift in Sources */,
 				06E0EBD11FAC0BB4002715AE /* AppConfigurator.swift in Sources */,
 				36024290257104A4009645F1 /* AppCoordinator.swift in Sources */,
+				3689F90F2578E8D300081F5D /* FingertipsDebooggerPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
