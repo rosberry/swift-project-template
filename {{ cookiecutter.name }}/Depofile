@@ -1,4 +1,6 @@
-pods: []
+pods:
+  - name: Fingertips
+    
 swiftPackages:
   - name: GenericModule
     url: https://github.com/rosberry/GenericModule

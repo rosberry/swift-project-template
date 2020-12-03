@@ -17,5 +17,5 @@ install_brew_dependencies_if_needed \
 general setup
 general -n Main -t rsb_mvp_vm_module
 depo --carthage-command-path carthage.sh
-addinator ./Carthage/Build/iOS/*.framework ./SPM/Build/iOS/*.framework
-carting update Carthage SPM
+addinator ./{SPM,Carthage,Pods}/Build/iOS/*.framework
+carting update Carthage SPM Pods
