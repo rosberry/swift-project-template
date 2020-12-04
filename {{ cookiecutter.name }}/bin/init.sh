@@ -1,15 +1,15 @@
 #!/bin/sh
 
 uncomment_env_flag() {
-	sed -i '' "/$1/s/^# //g" fastlane/.env
+    sed -i '' "/$1/s/^# //g" fastlane/.env
 }
 
 uncomment_env_flags() {
-	flags=("$@")
-	for flag in "${flags[@]}";
-	do
-		uncomment_env_flag $flag	
-	done
+    flags=("$@")
+    for flag in "${flags[@]}";
+    do
+	uncomment_env_flag $flag	
+    done
 }
 
 swiftgen config init >/dev/null
