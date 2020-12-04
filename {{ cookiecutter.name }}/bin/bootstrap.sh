@@ -12,7 +12,8 @@ install_brew_dependencies_if_needed \
     swiftgen \
     mono0926/license-plist/license-plist \
     artemnovichkov/projects/fastfood \
-    rosberry/tap/general
+    rosberry/tap/general \
+    rosberry/tap/depo
 
 general setup
 general -n Main -t rsb_mvp_vm_module

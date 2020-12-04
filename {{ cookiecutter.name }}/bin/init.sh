@@ -12,7 +12,7 @@ uncomment_env_flags() {
 	done
 }
 
-swiftgen >/dev/null
+swiftgen config init >/dev/null
 
 # Download fastlane and update .env
 fastfood update
