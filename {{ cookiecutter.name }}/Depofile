@@ -7,11 +7,6 @@ swiftPackages:
     version:
       operation: branch
       value: swift-package
-  - name: Core-iOS
-    url: https://github.com/rosberry/Core-iOS
-    version:
-      operation: branch
-      value: base-package
     
 carts:
 {% if cookiecutter.firebase == "Yes" %}- kind: binary
@@ -26,3 +21,10 @@ carts:
   version:
     operation: gitReference
     value: carthage
+- kind: github
+  identifier: rosberry/Core-iOS
+  version:
+    operation: gitReference
+    value: base-package    
+- kind: github
+  identifier: rosberry/Framezilla
