@@ -21,7 +21,7 @@ depo --carthage-command-path carthage.sh
 
 if command -v addinator &> /dev/null
 then
-    addinator ./{SPM,Carthage,Pods}/Build/iOS/*.framework
+    addinator ./{SPM,Carthage}/Build/iOS/*.framework
 fi
 
-carting update Carthage SPM Pods
+carting update Carthage SPM
