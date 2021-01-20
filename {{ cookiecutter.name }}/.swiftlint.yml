@@ -1,10 +1,11 @@
 # paths to ignore during linting. Takes precedence over `included`.
 
 excluded:
-  - Carthage/
-  - Pods/
+  - Carthage
+  - Pods
 
-# Rules
+disabled_rules:
+  - switch_case_alignment
 
 opt_in_rules:
   - conditional_returns_on_newline
@@ -30,11 +31,14 @@ colon:
 
 identifier_name:
   excluded:
+    - x
+    - y
     - id
     - URL
+    - vk
 
 statement_position:
-   statement_mode: uncuddled_else
+  statement_mode: uncuddled_else
 
 # Constants
 
@@ -52,7 +56,7 @@ function_parameter_count: 4
 
 type_name:
   min_length: 2 # only warning
-  
+
 type_contents_order:
   order:
     - case
