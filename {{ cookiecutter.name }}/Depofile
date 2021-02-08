@@ -20,9 +20,9 @@ carts:
     operation: gitReference
     value: carthage
 - kind: github
-  identifier: rosberry/Core-iOS
+  identifier: rosberry/Base-iOS
   version:
     operation: gitReference
-    value: base-package    
+    value: master
 - kind: github
   identifier: rosberry/Framezilla
