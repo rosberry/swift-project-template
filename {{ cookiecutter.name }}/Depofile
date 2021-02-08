@@ -1,11 +1,3 @@
-pods: []
-swiftPackages:
-  - name: GenericModule
-    url: https://github.com/rosberry/GenericModule
-    version:
-      operation: branch
-      value: swift-package
-    
 carts:
 {% if cookiecutter.firebase == "Yes" %}- kind: binary
   identifier: https://building42.github.io/Specs/Carthage/iOS/Fabric.json
@@ -26,3 +18,8 @@ carts:
     value: master
 - kind: github
   identifier: rosberry/Framezilla
+- kind: github
+  identifier: rosberry/GenericModule
+  version:
+    operation: gitReference
+    value: master
